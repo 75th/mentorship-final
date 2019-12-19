@@ -20,7 +20,7 @@ export default ({ data }) => {
 
             <div className="images">
               <div class="cycle-slideshow">
-                { node.relationships.field_images && <img src={ node.relationships.field_images[0].localFile.publicURL } /> }
+                {node.relationships.field_images && <img src={node.relationships.field_images[0].localFile.publicURL} alt={ node.title }/> }
               </div>
             </div>
           </div>
@@ -45,15 +45,15 @@ export default ({ data }) => {
             <h2>About the Object</h2>
             <table>
               <tbody>
-                {node.field_object_category && <ObjectTableRow label="Category" value={node.field_object_category.name} />}
-                {node.field_accession && <ObjectTableRow label="Accession" value={node.field_accession} />}
-                {node.field_object_medium && <ObjectTableRow label="Medium" value={node.field_object_medium} />}
-                {node.field_dimensions && <ObjectTableRow label="Dimensions" value={node.field_dimensions} />}
-                {node.field_geography && <ObjectTableRow label="City" value={node.field_geography} />}
-                {node.field_creator_label && node.field_creator_name && <ObjectTableRow label={node.field_creator_label} value={node.field_creator_name} />}
-                {node.field_studio && <ObjectTableRow label="Studio" value={node.field_studio} />}
-                {(node.field_year || node.field_display_date) && <ObjectTableRow label="Date" value={node.field_display_date ? node.field_display_date : node.field_year} />}
-                {node.field_object_credit && <ObjectTableRow label="Credit Line" value={node.field_object_credit} />}
+                {node.relationships && node.relationships.field_object_category && <ObjectTableRow label="Category" value={node.relationships.field_object_category.name} />}
+                <ObjectTableRow label="Accession" value={node.field_accession} />
+                <ObjectTableRow label="Medium" value={node.field_object_medium} />
+                <ObjectTableRow label="Dimensions" value={node.field_dimensions} />
+                <ObjectTableRow label="City" value={node.field_geography} />
+                <ObjectTableRow label={node.field_creator_label} value={node.field_creator_name} />
+                <ObjectTableRow label="Studio" value={node.field_studio} />
+                <ObjectTableRow label="Date" value={node.field_display_date ? node.field_display_date : node.field_year} />
+                <ObjectTableRow label="Credit Line" value={node.field_object_credit} />
               </tbody>
             </table>
           </div>

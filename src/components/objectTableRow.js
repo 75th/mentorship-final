@@ -3,7 +3,7 @@ import React from "react"
 
 const ObjectTableRow = ({ label, value }) => {
   if (!label || !value) {
-    return;
+    return null;
   }
 
   return (

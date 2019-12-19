@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+@import url(/themes/custom/osage/fonts/fa/css/all.css);
+@import 'fonts/css/fa.min.css';
+@import 'inc/globals';
+@import 'inc/share-like';
+@import 'inc/header';
+@import 'inc/color-themes';
+@import 'inc/footer';
+@import 'inc/home';
+@import 'inc/basic';
+@import 'inc/visit';
+@import 'inc/events';
+@import 'inc/artists';
+@import 'inc/collection';
+@import 'inc/blog';
+@import 'inc/object';
+@import 'inc/search';
+@import 'inc/forms';
+
+.visually-hidden {
+  display: none;
+}

@@ -1,0 +1,481 @@
+form {
+	padding: 0 0 50px;
+
+	label {
+		display: block;
+		font-weight: bold;
+		color: $white;
+	}
+
+	select,
+	input[type='text'],
+	input[type='email'],
+	input[type='search'],
+	input[type='tel'],
+	textarea {
+		width: 100%;
+		display: block;
+		padding: 10px 25px;
+		border-radius: 0px;
+		-webkit-appearance: none;
+	}
+
+	#edit-submit {
+		width: 200px;
+		margin: 30px auto;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	#edit-preview {
+		display: none;
+	}
+}
+
+.Visit {
+	form {
+
+		input,
+		text-area,
+		select {
+			color: $red;
+		}
+
+		#edit-submit {
+			color: $red;
+
+			&:hover {
+				background: $dred;
+				cursor: pointer;
+				color: $white;
+			}
+		}
+	}
+}
+
+.Artists {
+	form {
+
+		input,
+		text-area,
+		select {
+			color: $blue;
+		}
+
+		#edit-submit {
+			color: $blue;
+
+			&:hover {
+				background: $blue;
+				cursor: pointer;
+				color: $white;
+			}
+		}
+	}
+}
+
+.contact-message-contact-us-form,
+.contact-message-artist-registry-form {
+	@include content-form;
+
+	.field--name-langcode {
+		display: none;
+	}
+
+	.field--type-image {
+		grid-column-end: span 2;
+
+		.image-widget {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		input[type=file] {
+			background-color: white;
+			color: black;
+		}
+
+		input.form-submit {
+			max-width: 200px;
+			margin-left: 20px;
+			border-radius: 10000px;
+			border: 2px solid white;
+
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: $gray;
+				color: white;
+			}
+
+			&:active {
+				border-color: $gray;
+				border-style: solid;
+			}
+		}
+	}
+}
+
+.contact-message-contact-us-form {
+	.field--name-field-email {
+		grid-column-end: span 2;
+	}
+
+
+}
+
+.contact-message-artist-registry-form {
+	.field--name-field-preferred-method,
+	.field--name-field-artwork-image-title {
+		grid-column-end: span 2;
+	}
+}
+
+// Webforms
+.field--form {
+	$field-gutter: 20px;
+	$text-types: ['text', 'email', 'url', 'search', 'number', 'password', 'tel'];
+
+	form > fieldset {
+		border: 0;
+		margin: 0;
+		flex-basis: 100%;
+	}
+
+	form {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+
+	label {
+		text-transform: uppercase;
+		margin-left: 15px;
+	}
+
+	.form-item:nth-child(n):not(fieldset) {
+		margin: $field-gutter / 2 !important;
+	}
+
+	input {
+		@each $type in $text-types {
+			&[type='#{$type}'] {
+				border: 0;
+				border-bottom: 5px solid $gray;
+				padding: 10px 15px;
+				font-size: 22px;
+				outline: none;
+
+				&:focus {
+					color: $white;
+					background-color: $gray;
+					border-bottom-color: $white;
+				}
+			}
+		}
+	}
+
+	select:not([multiple]) {
+		font-size: 22px;
+		font-family: 'Open Sans', sans-serif;
+		border: 0;
+		border-bottom: 5px solid $gray;
+
+		&:focus {
+			color: $white;
+			background-color: $gray;
+			border-bottom-color: $white;
+		}
+	}
+
+	.fieldset-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.webform-type-webform-name {
+		.fieldset-wrapper {
+			@media (max-width: $mobile-max) {
+				flex-wrap: wrap;
+			}
+		}
+
+		.form-item-name-first,
+		.form-item-name-last {
+			flex-basis: calc(45% - #{$field-gutter});
+
+			label {
+				&::after {
+					content: ' Name';
+				}
+			}
+		}
+
+		.form-item-name-suffix {
+			flex-basis: calc(10% - #{$field-gutter});
+		}
+	}
+
+	.webform-type-webform-address {
+		.fieldset-wrapper {
+			flex-wrap: wrap;
+		}
+
+		.form-item-address-address,
+		.form-item-address-address-2 {
+			flex-basis: 100%;
+		}
+
+		.form-item-address-city {
+			flex-basis: calc(60% - #{$field-gutter});
+		}
+
+		.form-item-address-state-province {
+			flex-basis: calc(25% - #{$field-gutter});
+		}
+
+		.form-item-address-postal-code {
+			flex-basis: calc(15% - #{$field-gutter});
+		}
+	}
+
+	.form-item-phone,
+	.form-item-email,
+	.form-item-preferred-contact-method {
+		flex-basis: calc(33.3333% - #{$field-gutter});
+	}
+
+	.form-item-object-description,
+	.form-item-images {
+		flex-basis: 100%;
+	}
+
+	.form-item-images {
+		padding-left: 15px;
+
+		label {
+			margin-left: 0;
+		}
+	}
+
+	.form-item-is-osage,
+	.form-item-is-related {
+		flex-basis: 100%;
+		padding-left: 15px;
+	}
+
+	.webform-element-description {
+		color: white;
+	}
+
+	.webform-button--submit {
+		font-size: 24px;
+		text-transform: uppercase;
+		border-radius: 10000px;
+		padding: 10px 30px;
+		background: $white;
+		color: $red;
+		border: 0;
+		margin-right: 10px;
+		letter-spacing: -1px;
+		cursor: pointer;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: $gray;
+			color: $white;
+		}
+	}
+
+	textarea {
+		min-height: 125px;
+		font-size: 22px;
+	}
+
+	.webform-submission-volunteer-application-form {
+		.form-item-age {
+			flex-basis: calc(33.333% - #{$field-gutter});
+		}
+
+		.form-item-education {
+			flex-basis: calc(66.667% - #{$field-gutter});
+		}
+
+		.form-item-age,
+		.form-item-education {
+
+			input,
+			select {
+				width: 100%;
+			}
+		}
+
+		.form-item-group-technical-skills,
+		.form-item-group-customer-service,
+		.form-item-group-telephone-manner {
+			flex-basis: calc(33.333% - #{$field-gutter});
+
+			input {
+				width: auto;
+				flex-basis: auto;
+				flex-grow: 0;
+			}
+		}
+	}
+
+	.webform-type-checkboxes,
+	.webform-checkboxes-other,
+	.webform-type-radios,
+	.webform-radios-other {
+		padding: 0;
+		margin: $field-gutter / 2;
+
+		.fieldset-wrapper {
+			display: block;
+			margin-left: 5px;
+		}
+
+		.form-text {
+			margin-left: -15px;
+			margin-right: 15px;
+		}
+
+		legend {
+			font-weight: 700;
+			color: white;
+			text-transform: uppercase;
+			margin-left: 15px;
+		}
+	}
+
+	.form-type-checkbox,
+	.js-form-type-checkbox,
+	.form-type-radio,
+	.js-form-type-radio {
+		display: inline-flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		&:nth-child(n):not(fieldset) {
+			margin-top: 5px !important;
+			margin-bottom: 5px !important;
+		}
+
+		input {
+			flex-grow: 0;
+			flex-basis: auto;
+			width: auto;
+		}
+
+		label {
+			flex-grow: 1;
+			text-transform: none;
+			font-weight: normal;
+			margin-left: 6px;
+		}
+	}
+
+	.form-type-radio,
+	.js-form-type-radio {
+		display: flex;
+	}
+
+	.webform-multiple-table {
+		position: relative;
+
+		.tabledrag-toggle-weight-wrapper {
+			text-align: right;
+			position: absolute;
+			top: -1.5em;
+			right: 0;
+
+			button {
+				background: transparent;
+				color: white;
+				border: 0;
+			}
+		}
+
+		td.webform-multiple-table--handle {
+			padding-left: 0;
+
+			a {
+				display: block;
+			}
+
+			.handle {
+				opacity: 0.3;
+				cursor: grab;
+				background-image: linear-gradient(to bottom,
+						white 0%,
+						white 2px,
+						transparent 2px,
+						transparent calc(50% - 1px),
+						white calc(50% - 1px),
+						white calc(50% + 1px),
+						transparent calc(50% + 1px),
+						transparent calc(100% - 2px),
+						white calc(100% - 2px),
+						white 100%);
+
+				&:hover {
+					opacity: 1;
+				}
+
+				&:active {
+					cursor: grabbing;
+				}
+			}
+		}
+	}
+
+	.form-item-languages {
+		flex-basis: calc(75% - #{$field-gutter});
+
+		.webform-multiple-add {
+			display: none;
+			color: white;
+			justify-content: start;
+			align-items: center;
+
+			@media (max-width: $mobile-max) {
+				display: flex;
+			}
+		}
+
+		@media (max-width: $mobile-max) {
+			td {
+				padding: 0;
+
+				.form-item {
+					margin: 0 !important;
+				}
+			}
+
+			table label {
+				display: none !important;
+			}
+		}
+	}
+
+	.webform-multiple-table--operations {
+		input[type='image'] {
+			filter: invert(100%);
+		}
+	}
+
+	.form-item-employment-status {
+		flex-basis: calc(25% - #{$field-gutter});
+	}
+
+	@media (max-width: $mobile-max) {
+		.form-item {
+			flex-basis: 100% !important;
+		}
+	}
+}

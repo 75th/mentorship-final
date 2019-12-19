@@ -1,0 +1,134 @@
+.votingapi-widgets.like {
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: right;
+	
+
+	form {
+		display: inline-block;
+		padding-bottom: 0px;
+	}
+
+	.js-form-item-value, .vote-result {
+		display: inline-block;
+		pointer-events: auto;
+	}
+
+	.like-rating a {
+		margin-right: 2px !important;
+
+		&:link, &:visited {
+			color: white;
+
+			&:hover, &:active, &:focus {
+				color: $yellow;
+			}
+		}
+	}
+}
+
+.a2a_kit {
+	font-family: 'Open Sans', sans-serif;
+	display: block;
+
+	.a2a_dd {
+		width: auto;
+	}
+	.a2a_svg {
+		display: none;
+	}
+
+	a {
+		display: block;
+	}
+
+	.a2a_label {
+		clip: auto;
+		clip-path: none;
+		border: 0;
+		width: auto !important;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $red;
+		position: static !important;
+		display: block;
+		
+
+		&::before {
+			font-family: 'FontAwesome';
+			content: "\f064";
+			display: inline-block;
+			margin-right: 4px;
+		}
+	}
+}
+
+.a2a_menu {
+	border-radius: 0px;
+
+	a {
+		font-family: 'Open Sans', sans-serif !important;
+		font-weight: 700 !important;
+		
+		&:link, &:visited {
+			color: $black !important;
+
+			&:hover, &:active, &:focus {
+				color: $black !important;
+			}
+		}
+	}
+}
+
+.addtoany_list a:hover:hover img,
+.addtoany_list a:hover span {
+	opacity: 1;
+}
+
+@mixin share-like-typography(
+	$c: white,
+	$hover-c: $yellow,
+	$fs: 14px,
+	$fw: 700
+) {
+	.votingapi-widgets.like {
+		color: $c;
+		font-size: $fs;
+		font-weight: $fw;
+
+		.like-rating a {
+			&:link, &:visited {
+				color: $c;
+	
+				&:hover, &:active, &:focus {
+					color: $hover-c;
+				}
+			}
+		}
+	}
+
+	.addtoany_list.a2a_kit_size_32 > a {
+		font-size: $fs;
+
+		&:link, &:visited {
+			color: $c;
+		}
+		
+		&:hover, &:active, &:focus {
+			color: $hover-c;
+		}
+	}
+	
+	.a2a_kit {	
+		.a2a_label {
+			font-weight: $fw;
+			color: $c;
+
+			&:hover, &:active, &:focus {
+				color: $hover-c;				
+			}
+		}
+	}
+}

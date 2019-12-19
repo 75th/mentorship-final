@@ -1,0 +1,96 @@
+.search-form {
+  .container-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .form-item-keys {
+    flex-grow: 1;
+
+    label {
+      color: $purple;
+      font-size: 24px;
+      font-weight: 400;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      border: 0;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  #edit-submit {
+    flex-grow: 0;
+    appearance: none;
+    background: rgba(black, 0.5);
+    color: white;
+    font-size: 18px;
+    color: white;
+    border: 0;
+    font-weight: 400;
+    text-transform: none;
+    margin: 0;
+    height: 44px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    cursor: pointer;
+  }
+}
+
+.path-search-node {
+  .search-form {
+    + h2,
+    + h3 {
+      font-size: 50px;
+      font-weight: 400;
+      color: $purple;
+    }
+  }
+
+  .page-content ol {
+    li {
+      font-size: 36px;
+      color: $black;
+      padding: 20px 0;
+      font-weight: 300;
+      border-bottom: 1px solid $purple;
+    }
+
+    h3 {
+      margin: 0 auto 10px;
+      font-weight: 300;
+    }
+
+    a {
+      &:link, &:visited {
+        text-decoration: none;
+        color: $purple;
+      }
+
+      &:visited {
+        color: rgba($purple, 0.85);
+      }
+
+      &:hover, &:active, &:focus {
+        color: $lpurple;
+      }
+
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    p:last-child {
+      display: none;
+    }
+  }
+}

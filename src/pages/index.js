@@ -1,21 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import Container from "../components/container/container"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const IndexPage = ({ data }) => {
+  return (
+    <Container>
+      <h1>All {data.allNodeObject.totalCount} Objects</h1>
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+      <ul>
+        {data.allNodeObject.edges.map(({ node }) => (
+          <li><Link to={node.fields.slug}>{node.title}</Link></li>
+        ))}
+      </ul>
+    </Container>
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+  query ObjectList {
+    __typename
+    allNodeObject(sort: {fields: field_year}) {
+      edges {
+        node {
+          title
+          fields {
+            slug
+          }
+        }
+      }
+      totalCount
+    }
+  }
+`

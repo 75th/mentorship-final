@@ -1,0 +1,1266 @@
+@mixin color-theme(
+	$header: transparent,
+
+	$topbar-outer: $yellow, // Hours and Need Help?
+	$topbar-outer-text: $purple,
+	$topbar-outer-hover: $lyellow,
+	$topbar-outer-hover-text: $topbar-outer-text,
+	$topbar-inner: $purple, // Directions and phone number
+	$topbar-inner-text: $white,
+	$topbar-inner-hover: $lpurple,
+	$topbar-inner-hover-text: $topbar-inner-text,
+
+	$logo: $purple,
+	$logo-dust: $logo,
+	$logo-letter: $logo,
+
+	$extra-menu-desktop-button: $purple,
+	$extra-menu-desktop-button-text: $yellow,
+
+	$extra-menu-inactive: $lpurple,
+	$extra-menu-active: $purple,
+	$extra-menu-icons: $yellow,
+	$extra-menu-open-icon-active: $white,
+	$extra-menu-text: $white,
+	$extra-menu-box-heading: $yellow,
+	$extra-menu-box-text: $white,
+	$extra-menu-box-link-text: $yellow,
+	$extra-menu-box-button: $yellow,
+	$extra-menu-box-button-text: $purple,
+	$extra-menu-box-view-all-overlay: $lpurple,
+
+	$mobile-nav-bar: $lpurple,
+	$mobile-nav-bar-main-menu-active: $yellow,
+
+	$mobile-box-border-top: $lpurple,
+	$mobile-box-border-bottom: $yellow,
+
+	$mobile-box-button-inactive-text: $white,
+	$mobile-box-button-active: $yellow,
+	$mobile-box-button-active-text: $purple,
+	$mobile-box-button-main-menu-active-text: $purple,
+
+	$mobile-hamburger-button: $purple,
+	$mobile-hamburger-button-text: $yellow,
+	$mobile-hamburger-button-active: $lpurple,
+	$mobile-hamburger-button-active-text: $white,
+
+	$desktop-main-menu-text: $purple,
+	$desktop-main-menu-not-parent-hover-text: $lpurple,
+	$desktop-main-menu-parent-hover: $purple,
+	$desktop-main-menu-parent-hover-text: $white,
+	$desktop-main-menu-dropdown-top-border: $purple,
+	$desktop-main-menu-dropdown-link: $lpurple,
+	$desktop-main-menu-dropdown-link-border-bottom: $yellow,
+	$desktop-main-menu-dropdown-link-text: $white,
+	$desktop-main-menu-dropdown-link-hover: $yellow,
+	$desktop-main-menu-dropdown-link-hover-text: $purple,
+	$desktop-main-menu-dropdown-link-hover-border-left: $purple,
+
+	$mobile-main-menu: $purple,
+	$mobile-main-menu-border-top: $lpurple,
+	$mobile-main-menu-link-text: $white,
+	$mobile-main-menu-active: $white,
+	$mobile-main-menu-active-text: $purple,
+	$mobile-main-menu-disclosure-triangle: $yellow,
+	$mobile-main-menu-active-disclosure-triangle: $yellow,
+	$mobile-main-menu-submenu: $purple,
+	$mobile-main-menu-submenu-text: $white,
+	$mobile-main-menu-submenu-active: $lpurple,
+	$mobile-main-menu-submenu-active-text: $white,
+
+	$sticky-header: $yellow,
+	$sticky-header-outer: $lpurple,
+	$sticky-header-outer-text: $white,
+	$sticky-header-outer-hover: $lyellow,
+	$sticky-header-outer-hover-text: $purple,
+
+	$event--extra-menu--date: $lpurple,
+	$event--extra-menu--date-text: $white,
+	$event--extra-menu--category: $purple,
+	$event--extra-menu--category-text: $yellow,
+	$event--extra-menu--title: $yellow,
+	$event--extra-menu--title-text: $purple,
+
+	$event--footer--title: $yellow,
+	$event--footer--title-text: $purple,
+	$event--footer--hover--title: $purple,
+	$event--footer--hover--title-text: $yellow,
+	$event--footer--circle: $yellow,
+	$event--footer--date-text: $white,
+	$event--footer--date-shadow: #000,
+
+	$story--extra-menu: $yellow,
+	$story--extra-menu-text: $purple,
+
+	$breadcrumb-no-link-text: $black,
+	$breadcrumb-unvisited-text: $purple,
+	$breadcrumb-visited-text: $lpurple,
+	$breadcrumb-hover-text: $purple,
+
+	$page-footer--gradient-top: $purple,
+	$page-footer--gradient-bottom: $lpurple,
+
+	$page-footer--support-text: $white,
+	$page-footer--support--strong-text: $white,
+	$page-footer--support--button-text: $purple,
+	$page-footer--support--button--gradient-left: $yellow,
+	$page-footer--support--button--gradient-right: $lyellow,
+	$page-footer--support--button--hover: $lyellow,
+	$page-footer--support--button--hover-text: $purple,
+	$page-footer--support--rule: $yellow,
+
+	$page-footer--partners--heading: $yellow,
+	$page-footer--partners--link-text: $white,
+	$page-footer--partners--link-hover-text: $lyellow,
+
+	$page-footer--logo--dust: $white,
+	$page-footer--logo--letter: $white,
+
+	$page-footer--band: $yellow,
+	$page-footer--band--gradient-top: $yellow,
+	$page-footer--band--gradient-bottom: $lyellow,
+
+	$page-footer--hours: $lpurple,
+	$page-footer--hours-text: $white,
+	$page-footer--hours--link-text: $white,
+	$page-footer--hours--link-hover-text: $lyellow,
+	$page-footer--hours--heading-text: $yellow,
+
+	$page-footer--social--heading-text: $yellow,
+	$page-footer--social--link-text: $purple,
+	$page-footer--social--link-hover-text: $lpurple,
+
+	$page-footer--form--heading-text: $purple,
+	$page-footer--form--field-border: $purple,
+	$page-footer--form--button: $purple,
+	$page-footer--form--button-text: $yellow,
+
+	$page-footer--copyright--border: $yellow,
+	$page-footer--copyright--text: $white,
+	$page-footer--copyright--link-text: $white,
+	$page-footer--copyright--link-hover-text: $yellow,
+) {
+	header {
+		background: $header;
+
+		.hours {
+			background: $topbar-outer;
+
+			p {
+				color: $topbar-outer-text;
+			}
+		}
+
+		.directions,
+		.call {
+			background: $topbar-inner;
+
+			a {
+				color: $topbar-inner-text;
+			}
+
+			&:hover {
+				background: $topbar-inner-hover;
+
+				a {
+					color: $topbar-inner-hover-text;
+				}
+			}
+		}
+
+		.help {
+			background: $topbar-outer;
+
+			p a {
+				color: $topbar-outer-text;
+			}
+
+			&:hover {
+				background: $topbar-outer-hover;
+
+				p a {
+					color: $topbar-outer-hover-text;
+				}
+
+			}
+		}
+
+		#logo {
+			svg {
+				.dust {
+					fill: $logo-dust;
+				}
+
+				.letter {
+					fill: $logo-letter;
+				}
+			}
+		}
+
+		.extra-menu-desktop-button {
+			background: $extra-menu-desktop-button;
+
+			span {
+				background: $extra-menu-desktop-button-text;
+			}
+		}
+
+		.extra-menus-wrapper {
+			background: $extra-menu-inactive;
+		}
+
+		.extra-menu {
+			.title {
+				background: transparent;
+
+				.fa {
+					color: $extra-menu-icons;
+				}
+
+				span:nth-child(2) {
+					color: $extra-menu-text;
+				}
+			}
+
+			> div {
+				background-color: $extra-menu-active;
+				border-top-color: $mobile-box-border-top;
+				border-bottom-color: $mobile-box-border-bottom;
+
+				p {
+					color: $extra-menu-box-text;
+
+					a {
+						color: $extra-menu-box-link-text;
+					}
+				}
+
+				p:nth-child(1) strong,
+				h2 {
+					color: $extra-menu-box-heading;
+				}
+
+				.button {
+					background: $extra-menu-box-button;
+					color: $extra-menu-box-button-text;
+				}
+			}
+		}
+
+		&.searchbox {
+			input[type='submit'] {
+				background: rgba(0, 0, 0, 0.2);
+				color: white;
+
+				&:hover,
+				&:active {
+					background-color: rgba(0, 0, 0, 0.4);
+				}
+			}
+		}
+
+		.extra-menu.open {
+			> span {
+				background: $extra-menu-active;
+
+				.caret {
+					color: $extra-menu-open-icon-active;
+				}
+			}
+		}
+
+		.bignav {
+			> li {
+				> a {
+					color: $desktop-main-menu-text;
+				}
+
+				&:hover {
+					> a {
+						color: $desktop-main-menu-not-parent-hover-text;
+					}
+
+					> a:nth-last-child(2) {
+						color: $desktop-main-menu-parent-hover-text;
+						background: $desktop-main-menu-parent-hover;
+					}
+				}
+			}
+		}
+
+		.subnav {
+			background: $desktop-main-menu-dropdown-top-border;
+
+			> li {
+				border-bottom-color: $desktop-main-menu-dropdown-link-border-bottom;
+				background: $desktop-main-menu-dropdown-link;
+
+				> a {
+					color: $desktop-main-menu-dropdown-link-text;
+
+					&:hover {
+						background: $desktop-main-menu-dropdown-link-hover;
+						color: $desktop-main-menu-dropdown-link-hover-text;
+						border-left-color: $desktop-main-menu-dropdown-link-hover-text;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: $mobile-max) {
+			.main-menu-mobile-button {
+				background: $mobile-hamburger-button;
+
+				span {
+					color: $mobile-hamburger-button-text;
+				}
+			}
+
+			.main-menu-open .main-menu-mobile-button {
+				background: $mobile-hamburger-button-active;
+
+				span {
+					color: $mobile-hamburger-button-active-text;
+				}
+			}
+
+			.extra-menus-wrapper {
+				background-color: $mobile-nav-bar;
+			}
+
+			.main-menu-open .extra-menus-wrapper {
+				background-color: $mobile-nav-bar-main-menu-active;
+			}
+
+			.extra-menu {
+				.title .fa {
+					color: $mobile-box-button-inactive-text;
+				}
+
+				&.open .title {
+					background-color: $mobile-box-button-active;
+
+					.fa {
+						color: $mobile-box-button-active-text;
+					}
+				}
+			}
+
+			.main-menu-open .extra-menu .title .fa {
+				color: $mobile-box-button-main-menu-active-text;
+			}
+
+			.bignav {
+				background: $mobile-main-menu;
+				border-top-color: $mobile-main-menu-border-top;
+
+				> li {
+					> a {
+						color: $mobile-main-menu-link-text;
+					}
+
+					&:hover,
+					&:focus,
+					&:active {
+						background: $mobile-main-menu-active;
+
+						> a {
+							color: $mobile-main-menu-active-text !important;
+							background: $mobile-main-menu-active !important;
+						}
+					}
+				}
+			}
+
+			.bignav .expanded:after {
+				color: $mobile-main-menu-disclosure-triangle;
+			}
+
+			.bignav .expanded.open,
+			.bignav .expanded:hover,
+			.bignav .expanded:focus,
+			.bignav .expanded:active {
+				background: $mobile-main-menu-active;
+
+				&::after {
+					color: $mobile-main-menu-active-disclosure-triangle;
+				}
+
+				> a {
+					color: $mobile-main-menu-active-text;
+				}
+
+				.subnav {
+					background: $mobile-main-menu-submenu;
+
+					li a {
+						background: $mobile-main-menu-submenu !important;
+						color: $mobile-main-menu-submenu-text !important;
+
+						&:hover,
+						&:focus,
+						&:active {
+							background: $mobile-main-menu-submenu-active !important;
+							color: $mobile-main-menu-submenu-active-text !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	header.sticky {
+		background: $sticky-header;
+
+		.hours,
+		.help {
+			background: $sticky-header-outer;
+
+			p a,
+			p {
+				color: $sticky-header-outer-text;
+			}
+
+			&:hover {
+				background: $sticky-header-outer-hover;
+
+				p,
+				p a {
+					color: $sticky-header-outer-hover-text;
+				}
+			}
+		}
+	}
+
+	.event--extra-menu {
+		.event__date {
+			background-color: $event--extra-menu--date;
+			color: $event--extra-menu--date-text;
+		}
+
+		.event__category {
+			background-color: $event--extra-menu--category;
+			color: $event--extra-menu--category-text;
+		}
+
+		.event__title {
+			background-color: $event--extra-menu--title;
+			color: $event--extra-menu--title-text;
+		}
+	}
+
+	.story--extra-menu {
+		background-color: $story--extra-menu;
+
+		a {
+			&:link, &:visited {
+				color: $story--extra-menu-text;
+			}
+		}
+
+		.story__title {
+			color: $story--extra-menu-text;
+		}
+
+		.story__info {
+			background-color: rgba($story--extra-menu, 0.9);
+		}
+	}
+
+	.event--front-page,
+	.event--event-footer,
+	.event--blog-footer {
+		a {
+			&:hover {
+				.event__title {
+					background-color: $event--footer--hover--title;
+
+					h3,
+					h4 {
+						color: $event--footer--hover--title-text;
+					}
+				}
+			}
+		}
+
+		&::after {
+			background: $event--footer--circle;
+		}
+
+		.event__title {
+			background-color: $event--footer--title;
+
+			h3,
+			h4 {
+				color: $event--footer--title-text;
+			}
+		}
+
+		.event__date {
+			color: $event--footer--date-text;
+			text-shadow: 2px 4px 8px rgba($event--footer--date-shadow, 0.7);
+		}
+	}
+
+	.event--blog-footer {
+		.event__date {
+			background-color: $event--footer--circle;
+		}
+	}
+
+	.view-news-extra-menu,
+	.view-events-extra-menu {
+		.view-footer {
+			a {
+				background-color: rgba($extra-menu-box-view-all-overlay, 0.5);
+
+				&:link,
+				&:visited {
+
+					&:hover,
+					&:active,
+					&:focus {
+						background-color: rgba($extra-menu-box-view-all-overlay, 0.75);
+					}
+				}
+			}
+		}
+	}
+
+	.breadcrumb {
+		color: $breadcrumb-no-link-text;
+
+		a {
+			&:link {
+				color: $breadcrumb-unvisited-text;
+			}
+
+			&:visited {
+				color: $breadcrumb-visited-text;
+			}
+
+			&:hover, &:active {
+				color: $breadcrumb-hover-text;
+			}
+		}
+	}
+
+	.footer-wrap {
+		background:
+			$page-footer--gradient-top linear-gradient(
+				to bottom, $page-footer--gradient-top 0,
+				$page-footer--gradient-bottom 500px,
+				$page-footer--gradient-bottom 100%
+			)
+		;
+
+		#support {
+			h2 {
+				color: $page-footer--support-text;
+
+				strong {
+					color: $page-footer--support--strong-text;
+				}
+			}
+
+			.button {
+				color: $page-footer--support--button-text;
+				background:
+					$page-footer--support--button--gradient-right
+					linear-gradient(
+						to right,
+						$page-footer--support--button--gradient-left,
+						$page-footer--support--button--gradient-right 100%
+					)
+				;
+
+				&:hover {
+					background: $page-footer--support--button--hover;
+					color: $page-footer--support--button--hover-text;
+				}
+			}
+
+			hr {
+				background: $page-footer--support--rule;
+			}
+		}
+
+		footer {
+			.footer-logo {
+				div {
+					&:nth-child(2) {
+						h2 {
+							color: $page-footer--partners--heading;
+						}
+
+						ul li a {
+							color: $page-footer--partners--link-text;
+
+							&:hover {
+								color: $page-footer--partners--link-hover-text;
+							}
+						}
+					}
+				}
+
+				svg {
+					.dust {
+						fill: $page-footer--logo--dust;
+					}
+
+					.letter {
+						fill: $page-footer--logo--letter;
+					}
+				}
+			}
+
+			// Hours, location, social, enews
+			.band {
+				background:
+					$page-footer--band
+					linear-gradient(
+						$page-footer--band--gradient-top,
+						$page-footer--band--gradient-bottom
+					)
+				;
+
+				.container {
+					.hours {
+						background: $page-footer--hours;
+
+						p {
+							color: $page-footer--hours-text;
+
+							a {
+								color: $page-footer--hours--link-text;
+
+								&:hover {
+									color: $page-footer--hours--link-hover-text;
+								}
+							}
+						}
+
+						h3 {
+							color: $page-footer--hours--heading-text;
+						}
+					}
+
+					.follow {
+						h2 {
+							color: $page-footer--social--heading-text;
+						}
+
+						ul li a {
+							color: $page-footer--social--link-text;
+
+							&:hover {
+								color: $page-footer--social--link-hover-text;
+							}
+						}
+
+						.footer-subscribe {
+							h2 {
+								color: $page-footer--form--heading-text;
+
+								@media (max-width: $mobile-max) {
+									color: $page-footer--social--heading-text;
+								}
+							}
+
+							.form-actions {
+								input {
+									background: $page-footer--form--button;
+									color: $page-footer--form--button-text;
+								}
+							}
+						}
+
+						form {
+							label {
+								color: $page-footer--form--heading-text;
+							}
+
+							input {
+								border-bottom-color: $page-footer--form--field-border;
+							}
+						}
+					}
+				}
+			}
+
+			// Copyright and footer menu
+			.copy {
+				border-bottom-color: $page-footer--copyright--border;
+
+				.container .copyright p {
+					color: $page-footer--copyright--text;
+				}
+
+				.container .fmenu ul li a {
+					color: $page-footer--copyright--link-text;
+
+					&:hover {
+						color: $page-footer--copyright--link-hover-text;
+					}
+				}
+			}
+		}
+	}
+}
+
+body,
+.yellow {
+	@include color-theme();
+}
+
+.Visit,
+.Support {
+	@include color-theme(
+		$header: $dred,
+
+		$topbar-outer: $red, // Hours and Need Help?
+		$topbar-outer-text: $white,
+		$topbar-outer-hover: $dred,
+		$topbar-inner: $white, // Directions and phone number
+		$topbar-inner-text: $red,
+		$topbar-inner-hover: $dred,
+		$topbar-inner-hover-text: $white,
+
+		$logo: $white,
+
+		$extra-menu-desktop-button: $white, // Button to open extra menu on desktop
+		$extra-menu-desktop-button-text: $red,
+
+		$extra-menu-inactive: $red,
+		$extra-menu-active: $dred,
+		$extra-menu-icons: $white,
+		$extra-menu-open-icon-active: $white,
+		$extra-menu-text: $white,
+		$extra-menu-box-heading: $white,
+		$extra-menu-box-text: $white,
+		$extra-menu-box-link-text: $yellow,
+		$extra-menu-box-button: $white,
+		$extra-menu-box-button-text: $red,
+		$extra-menu-box-view-all-overlay: $red,
+
+		$mobile-nav-bar: $white,
+		$mobile-nav-bar-main-menu-active: $red,
+
+		$mobile-box-border-top: $white,
+		$mobile-box-border-bottom: $red,
+
+		$mobile-box-button-inactive-text: $dred,
+		$mobile-box-button-active: $red,
+		$mobile-box-button-active-text: $white,
+		$mobile-box-button-main-menu-active-text: $white,
+
+		$mobile-hamburger-button: #fff,
+		$mobile-hamburger-button-text: $red,
+		$mobile-hamburger-button-active: $white,
+		$mobile-hamburger-button-active-text: $red,
+
+		$desktop-main-menu-text: $white,
+		$desktop-main-menu-not-parent-hover-text: rgba($white, 0.8),
+		$desktop-main-menu-parent-hover: $white,
+		$desktop-main-menu-parent-hover-text: $red,
+		$desktop-main-menu-dropdown-top-border: $white,
+		$desktop-main-menu-dropdown-link: $red,
+		$desktop-main-menu-dropdown-link-border-bottom: $white,
+		$desktop-main-menu-dropdown-link-text: $white,
+		$desktop-main-menu-dropdown-link-hover: rgba($white, 0.8),
+		$desktop-main-menu-dropdown-link-hover-text: $red,
+		$desktop-main-menu-dropdown-link-hover-border-left: $red,
+
+		$mobile-main-menu: #fff,
+		$mobile-main-menu-border-top: $white,
+		$mobile-main-menu-link-text: $red,
+		$mobile-main-menu-active: $red,
+		$mobile-main-menu-active-text: $white,
+		$mobile-main-menu-disclosure-triangle: $red,
+		$mobile-main-menu-active-disclosure-triangle: $white,
+		$mobile-main-menu-submenu: $dred,
+		$mobile-main-menu-submenu-text: $white,
+		$mobile-main-menu-submenu-active: $red,
+		$mobile-main-menu-submenu-active-text: $white,
+
+		$sticky-header: $dred,
+		$sticky-header-outer: $red,
+		$sticky-header-outer-text: $white,
+		$sticky-header-outer-hover: $dred,
+		$sticky-header-outer-hover-text: $white,
+
+		$event--extra-menu--date: $red,
+		$event--extra-menu--date-text: $white,
+		$event--extra-menu--category: $dred,
+		$event--extra-menu--category-text: $white,
+		$event--extra-menu--title: $white,
+		$event--extra-menu--title-text: $red,
+
+		$story--extra-menu: $white,
+		$story--extra-menu-text: $red,
+
+		$breadcrumb-no-link-text: $white,
+		$breadcrumb-unvisited-text: #fff,
+		$breadcrumb-visited-text: rgba($white, 0.8),
+		$breadcrumb-hover-text: #fff,
+
+		$page-footer--gradient-top: $white,
+		$page-footer--gradient-bottom: $white,
+
+		$page-footer--support-text: $red,
+		$page-footer--support--strong-text: $dred,
+		$page-footer--support--button-text: $white,
+		$page-footer--support--button--gradient-left: $dred,
+		$page-footer--support--button--gradient-right: $dred,
+		$page-footer--support--button--hover: $red,
+		$page-footer--support--button--hover-text: $white,
+		$page-footer--support--rule: $red,
+
+		$page-footer--partners--heading: $dred,
+		$page-footer--partners--link-text: $red,
+		$page-footer--partners--link-hover-text: $dred,
+
+		$page-footer--logo--dust: $dred,
+		$page-footer--logo--letter: $black,
+
+		$page-footer--band: $red,
+		$page-footer--band--gradient-top: $dred,
+		$page-footer--band--gradient-bottom: $red,
+
+		$page-footer--hours: $white,
+		$page-footer--hours-text: $red,
+		$page-footer--hours--link-text: $red,
+		$page-footer--hours--link-hover-text: $dred,
+		$page-footer--hours--heading-text: $dred,
+
+		$page-footer--social--heading-text: $dred,
+		$page-footer--social--link-text: $white,
+		$page-footer--social--link-hover-text: rgba($white, 0.8),
+
+		$page-footer--form--heading-text: $white,
+		$page-footer--form--field-border: $red,
+		$page-footer--form--button: $red,
+		$page-footer--form--button-text: $white,
+
+		$page-footer--copyright--border: $dred,
+		$page-footer--copyright--text: $red,
+		$page-footer--copyright--link-text: $red,
+		$page-footer--copyright--link-hover-text: $dred,
+	);
+}
+
+.Events {
+	@include color-theme(
+		$header: transparent,
+
+		$topbar-outer: $blue, // Hours and Need Help?
+		$topbar-outer-text: $white,
+		$topbar-outer-hover: $white,
+		$topbar-outer-hover-text: $blue,
+		$topbar-inner: $dblue, // Directions and phone number
+		$topbar-inner-text: $white,
+		$topbar-inner-hover: $white,
+		$topbar-inner-hover-text: $dblue,
+
+		$logo: $white,
+
+		$extra-menu-desktop-button: $blue, // Button to open extra menu on desktop
+		$extra-menu-desktop-button-text: $white,
+
+		$extra-menu-inactive: $blue,
+		$extra-menu-active: $dblue,
+		$extra-menu-icons: $white,
+		$extra-menu-open-icon-active: $white,
+		$extra-menu-text: $white,
+		$extra-menu-box-heading: $white,
+		$extra-menu-box-text: $white,
+		$extra-menu-box-link-text: $yellow,
+		$extra-menu-box-button: $purple,
+		$extra-menu-box-button-text: $white,
+		$extra-menu-box-view-all-overlay: $lpurple,
+
+		$mobile-nav-bar: $blue,
+		$mobile-nav-bar-main-menu-active: $purple,
+
+		$mobile-box-border-top: $blue,
+		$mobile-box-border-bottom: $dblue,
+
+		$mobile-box-button-inactive-text: $white,
+		$mobile-box-button-active: $dblue,
+		$mobile-box-button-active-text: $white,
+		$mobile-box-button-main-menu-active-text: $white,
+
+		$mobile-hamburger-button: $dblue,
+		$mobile-hamburger-button-text: $white,
+		$mobile-hamburger-button-active: $blue,
+		$mobile-hamburger-button-active-text: $white,
+
+		$desktop-main-menu-text: $white,
+		$desktop-main-menu-not-parent-hover-text: rgba($white, 0.8),
+		$desktop-main-menu-parent-hover: $dblue,
+		$desktop-main-menu-parent-hover-text: $white,
+		$desktop-main-menu-dropdown-top-border: $dblue,
+		$desktop-main-menu-dropdown-link: $blue,
+		$desktop-main-menu-dropdown-link-border-bottom: $dblue,
+		$desktop-main-menu-dropdown-link-text: $white,
+		$desktop-main-menu-dropdown-link-hover: $white,
+		$desktop-main-menu-dropdown-link-hover-text: $purple,
+		$desktop-main-menu-dropdown-link-hover-border-left: $purple,
+
+		$mobile-main-menu: $dblue,
+		$mobile-main-menu-border-top: $blue,
+		$mobile-main-menu-link-text: $white,
+		$mobile-main-menu-active: $dblue,
+		$mobile-main-menu-active-text: $white,
+		$mobile-main-menu-disclosure-triangle: $white,
+		$mobile-main-menu-active-disclosure-triangle: $white,
+		$mobile-main-menu-submenu: $blue,
+		$mobile-main-menu-submenu-text: $white,
+		$mobile-main-menu-submenu-active: $dblue,
+
+		$sticky-header: $purple,
+		$sticky-header-outer: $blue,
+		$sticky-header-outer-text: $white,
+		$sticky-header-outer-hover: $white,
+		$sticky-header-outer-hover-text: $blue,
+
+		$event--extra-menu--date: $blue,
+		$event--extra-menu--date-text: $white,
+		$event--extra-menu--category: $dblue,
+		$event--extra-menu--category-text: $white,
+		$event--extra-menu--title: $purple,
+		$event--extra-menu--title-text: $white,
+
+		$story--extra-menu: $blue,
+		$story--extra-menu-text: $white,
+
+		$breadcrumb-no-link-text: $white,
+		$breadcrumb-unvisited-text: #fff,
+		$breadcrumb-visited-text: $white,
+		$breadcrumb-hover-text: #fff,
+
+		$page-footer--gradient-top: $dblue,
+		$page-footer--gradient-bottom: $blue,
+
+		$page-footer--support-text: $white,
+		$page-footer--support--strong-text: $white,
+		$page-footer--support--button-text: $white,
+		$page-footer--support--button--gradient-left: $purple,
+		$page-footer--support--button--gradient-right: $purple,
+		$page-footer--support--button--hover: $lpurple,
+		$page-footer--support--button--hover-text: $white,
+		$page-footer--support--rule: $purple,
+
+		$page-footer--partners--heading: $white,
+		$page-footer--partners--link-text: $white,
+		$page-footer--partners--link-hover-text: $lpurple,
+
+		$page-footer--logo--dust: $white,
+		$page-footer--logo--letter: $white,
+
+		$page-footer--band: $purple,
+		$page-footer--band--gradient-top: $purple,
+		$page-footer--band--gradient-bottom: $lpurple,
+
+		$page-footer--hours: $blue,
+		$page-footer--hours-text: $white,
+		$page-footer--hours--link-text: $white,
+		$page-footer--hours--link-hover-text: $lpurple,
+		$page-footer--hours--heading-text: $white,
+
+		$page-footer--social--heading-text: $white,
+		$page-footer--social--link-text: $white,
+		$page-footer--social--link-hover-text: $blue,
+
+		$page-footer--form--heading-text: $white,
+		$page-footer--form--field-border: $blue,
+		$page-footer--form--button: $blue,
+		$page-footer--form--button-text: $white,
+
+		$page-footer--copyright--border: $purple,
+		$page-footer--copyright--text: $white,
+		$page-footer--copyright--link-text: $white,
+		$page-footer--copyright--link-hover-text: $lpurple,
+  );
+}
+
+.Artists {
+	@include color-theme(
+		$header: transparent,
+
+		$topbar-outer: $dblue, // Hours and Need Help?
+		$topbar-outer-text: $white,
+		$topbar-outer-hover: $blue,
+		$topbar-inner: $yellow, // Directions and phone number
+		$topbar-inner-text: $dblue,
+		$topbar-inner-hover: $lyellow,
+		$topbar-inner-hover-text: $dblue,
+
+		$logo: $white,
+
+		$extra-menu-desktop-button: $yellow, // Button to open extra menu on desktop
+		$extra-menu-desktop-button-text: $blue,
+
+		$extra-menu-inactive: $lyellow,
+		$extra-menu-active: $yellow,
+		$extra-menu-icons: $blue,
+		$extra-menu-open-icon-active: $blue,
+		$extra-menu-text: $blue,
+		$extra-menu-box-heading: $dblue,
+		$extra-menu-box-text: $blue,
+		$extra-menu-box-link-text: $dblue,
+		$extra-menu-box-button: $blue,
+		$extra-menu-box-button-text: $yellow,
+		$extra-menu-box-view-all-overlay: $blue,
+
+		$mobile-nav-bar: $yellow,
+		$mobile-nav-bar-main-menu-active: $dblue,
+
+		$mobile-box-border-top: $lyellow,
+		$mobile-box-border-bottom: $dblue,
+
+		$mobile-box-button-inactive-text: $dblue,
+		$mobile-box-button-active: $dblue,
+		$mobile-box-button-active-text: $white,
+		$mobile-box-button-main-menu-active-text: $white,
+
+		$mobile-hamburger-button: $lyellow,
+		$mobile-hamburger-button-text: $dblue,
+		$mobile-hamburger-button-active: $yellow,
+		$mobile-hamburger-button-active-text: $dblue,
+
+		$desktop-main-menu-text: $white,
+		$desktop-main-menu-not-parent-hover-text: $yellow,
+		$desktop-main-menu-parent-hover: $yellow,
+		$desktop-main-menu-parent-hover-text: $blue,
+		$desktop-main-menu-dropdown-top-border: $yellow,
+		$desktop-main-menu-dropdown-link: $lyellow,
+		$desktop-main-menu-dropdown-link-border-bottom: $dblue,
+		$desktop-main-menu-dropdown-link-text: $blue,
+		$desktop-main-menu-dropdown-link-hover: $blue,
+		$desktop-main-menu-dropdown-link-hover-text: $yellow,
+		$desktop-main-menu-dropdown-link-hover-border-left: $yellow,
+
+		$mobile-main-menu: $lyellow,
+		$mobile-main-menu-border-top: $yellow,
+		$mobile-main-menu-link-text: $dblue,
+		$mobile-main-menu-active: $blue,
+		$mobile-main-menu-active-text: $white,
+		$mobile-main-menu-disclosure-triangle: $dblue,
+		$mobile-main-menu-active-disclosure-triangle: $yellow,
+		$mobile-main-menu-submenu: $blue,
+		$mobile-main-menu-submenu-text: $white,
+		$mobile-main-menu-submenu-active: $dblue,
+
+		$sticky-header: $blue,
+		$sticky-header-outer: $dblue,
+		$sticky-header-outer-text: $white,
+		$sticky-header-outer-hover: $blue,
+		$sticky-header-outer-hover-text: $white,
+
+		$event--extra-menu--date: $lyellow,
+		$event--extra-menu--date-text: $blue,
+		$event--extra-menu--category: $yellow,
+		$event--extra-menu--category-text: $blue,
+		$event--extra-menu--title: $blue,
+		$event--extra-menu--title-text: $white,
+
+		$story--extra-menu: $lyellow,
+		$story--extra-menu-text: $dblue,
+
+		$breadcrumb-no-link-text: $white,
+		$breadcrumb-unvisited-text: #fff,
+		$breadcrumb-visited-text: rgba($white, 0.8),
+		$breadcrumb-hover-text: $yellow,
+
+		$page-footer--gradient-top: $yellow,
+		$page-footer--gradient-bottom: $lyellow,
+
+		$page-footer--support-text: $dblue,
+		$page-footer--support--strong-text: $dblue,
+		$page-footer--support--button-text: $white,
+		$page-footer--support--button--gradient-left: $blue,
+		$page-footer--support--button--gradient-right: $blue,
+		$page-footer--support--button--hover: $dblue,
+		$page-footer--support--button--hover-text: $white,
+		$page-footer--support--rule: $dblue,
+
+		$page-footer--partners--heading: $dblue,
+		$page-footer--partners--link-text: $dblue,
+		$page-footer--partners--link-hover-text: $white,
+
+		$page-footer--logo--dust: $dblue,
+		$page-footer--logo--letter: $dblue,
+
+		$page-footer--band: $blue,
+		$page-footer--band--gradient-top: $dblue,
+		$page-footer--band--gradient-bottom: $blue,
+
+		$page-footer--hours: $lyellow,
+		$page-footer--hours-text: $dblue,
+		$page-footer--hours--link-text: $dblue,
+		$page-footer--hours--link-hover-text: $blue,
+		$page-footer--hours--heading-text: $dblue,
+
+		$page-footer--social--heading-text: $dblue,
+		$page-footer--social--link-text: $white,
+		$page-footer--social--link-hover-text: $lyellow,
+
+		$page-footer--form--heading-text: $white,
+		$page-footer--form--field-border: $lyellow,
+		$page-footer--form--button: $lyellow,
+		$page-footer--form--button-text: $blue,
+
+		$page-footer--copyright--border: $dblue,
+		$page-footer--copyright--text: $dblue,
+		$page-footer--copyright--link-text: $dblue,
+		$page-footer--copyright--link-hover-text: $blue,
+	);
+}
+
+.Collection,
+.Education {
+	@include color-theme(
+		$header: transparent,
+
+		$topbar-outer: $red, // Hours and Need Help?
+		$topbar-outer-text: $white,
+		$topbar-outer-hover: $white,
+		$topbar-outer-hover-text: $red,
+		$topbar-inner: $dred, // Directions and phone number
+		$topbar-inner-text: $white,
+		$topbar-inner-hover: $white,
+		$topbar-inner-hover-text: $dred,
+
+		$logo-dust: $red,
+		$logo-letter: $black,
+
+		$extra-menu-desktop-button: $red,
+		$extra-menu-desktop-button-text: $white,
+
+		$extra-menu-inactive: $dred,
+		$extra-menu-active: $red,
+		$extra-menu-icons: $white,
+		$extra-menu-open-icon-active: $white,
+		$extra-menu-text: $white,
+		$extra-menu-box-heading: $yellow,
+		$extra-menu-box-text: $white,
+		$extra-menu-box-link-text: $yellow,
+		$extra-menu-box-button: $white,
+		$extra-menu-box-button-text: $red,
+		$extra-menu-box-view-all-overlay: $red,
+
+		$mobile-nav-bar: $red,
+		$mobile-nav-bar-main-menu-active: $white,
+
+		$mobile-box-border-top: $dred,
+		$mobile-box-border-bottom: $white,
+
+		$mobile-box-button-inactive-text: $white,
+		$mobile-box-button-active: $white,
+		$mobile-box-button-active-text: $dred,
+		$mobile-box-button-main-menu-active-text: $dred,
+
+		$mobile-hamburger-button: $dred,
+		$mobile-hamburger-button-text: $white,
+		$mobile-hamburger-button-active: $red,
+		$mobile-hamburger-button-active-text: $white,
+
+		$desktop-main-menu-text: $red,
+		$desktop-main-menu-not-parent-hover-text: $dred,
+		$desktop-main-menu-parent-hover: $dred,
+		$desktop-main-menu-parent-hover-text: $white,
+		$desktop-main-menu-dropdown-top-border: $dred,
+		$desktop-main-menu-dropdown-link: $red,
+		$desktop-main-menu-dropdown-link-border-bottom: $dred,
+		$desktop-main-menu-dropdown-link-text: $white,
+		$desktop-main-menu-dropdown-link-hover: $white,
+		$desktop-main-menu-dropdown-link-hover-text: $red,
+		$desktop-main-menu-dropdown-link-hover-border-left: $dred,
+
+		$mobile-main-menu: $dred,
+		$mobile-main-menu-border-top: $red,
+		$mobile-main-menu-link-text: $white,
+		$mobile-main-menu-active: $dred,
+		$mobile-main-menu-active-text: $white,
+		$mobile-main-menu-disclosure-triangle: $white,
+		$mobile-main-menu-active-disclosure-triangle: $white,
+		$mobile-main-menu-submenu: $red,
+		$mobile-main-menu-submenu-text: $white,
+		$mobile-main-menu-submenu-active: $white,
+		$mobile-main-menu-submenu-active-text: $red,
+
+		$sticky-header: #fff, // Not $white!
+		$sticky-header-outer: $red,
+		$sticky-header-outer-text: $white,
+		$sticky-header-outer-hover: $white,
+		$sticky-header-outer-hover-text: $red,
+
+		$event--extra-menu--date: $dred,
+		$event--extra-menu--date-text: $white,
+		$event--extra-menu--category: $red,
+		$event--extra-menu--category-text: $white,
+		$event--extra-menu--title: $white,
+		$event--extra-menu--title-text: $red,
+
+		$event--footer--title: $dred,
+		$event--footer--title-text: $white,
+		$event--footer--hover--title: $white,
+		$event--footer--hover--title-text: $dred,
+		$event--footer--circle: $dred,
+		$event--footer--date-text: $white,
+		$event--footer--date-shadow: #000,
+
+		$story--extra-menu: $dred,
+		$story--extra-menu-text: $white,
+
+		$breadcrumb-no-link-text: $black,
+		$breadcrumb-unvisited-text: $red,
+		$breadcrumb-visited-text: $dred,
+		$breadcrumb-hover-text: $red,
+
+		$page-footer--gradient-top: $dred,
+		$page-footer--gradient-bottom: $red,
+
+		$page-footer--support-text: $white,
+		$page-footer--support--strong-text: $white,
+		$page-footer--support--button-text: $red,
+		$page-footer--support--button--gradient-left: $white,
+		$page-footer--support--button--gradient-right: $white,
+		$page-footer--support--button--hover: $silver,
+		$page-footer--support--button--hover-text: $red,
+		$page-footer--support--rule: $white,
+
+		$page-footer--partners--heading: $white,
+		$page-footer--partners--link-text: $white,
+		$page-footer--partners--link-hover-text: rgba($white, 0.8),
+
+		$page-footer--logo--dust: $white,
+		$page-footer--logo--letter: $white,
+
+		$page-footer--band: $white,
+		$page-footer--band--gradient-top: #eee,
+		$page-footer--band--gradient-bottom: $white,
+
+		$page-footer--hours: $red,
+		$page-footer--hours-text: $white,
+		$page-footer--hours--link-text: $white,
+		$page-footer--hours--link-hover-text: rgba($white, 0.8),
+		$page-footer--hours--heading-text: $white,
+
+		$page-footer--social--heading-text: $white,
+		$page-footer--social--link-text: $red,
+		$page-footer--social--link-hover-text: $dred,
+
+		$page-footer--form--heading-text: $dred,
+		$page-footer--form--field-border: $red,
+		$page-footer--form--button: $red,
+		$page-footer--form--button-text: $white,
+
+		$page-footer--copyright--border: $white,
+		$page-footer--copyright--text: $white,
+		$page-footer--copyright--link-text: $white,
+		$page-footer--copyright--link-hover-text: rgba($white, 0.8),
+	);
+}

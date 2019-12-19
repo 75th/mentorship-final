@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -24,7 +25,22 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/onmlogo.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://osage.sft/`,
+        disallowedLinkTypes: [
+          'contact_message',
+          'vote_result--vote_result',
+          'vote--vote',
+          'contact_message--personal',
+          'contact_message--feedback',
+          'contact_message--contact_us',
+          'contact_message--artist_registry',
+        ]
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

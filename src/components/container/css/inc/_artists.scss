@@ -1,0 +1,460 @@
+body.Artists {
+	background: $blue;
+	background: linear-gradient(to right, $blue, $dblue);
+
+	.page-content {
+		background: url(../../../images/backgrounds/artistsbg.png) no-repeat center top;
+		background-size: 100% auto;
+	}
+
+	.main-content {
+		width: 100%;
+		height: 100%;
+		min-height: 750px;
+		position: relative;
+
+		.container {
+			position: relative;
+			z-index: 1;
+		}
+
+		h1 {
+			position: relative;
+			z-index: 1;
+		}
+
+		.content {
+			z-index: 1;
+			position: relative;
+
+			article {
+				.summary {
+					border-bottom: 1px solid $yellow;
+				}
+			}
+
+			aside {
+				ul {
+					li {
+						a {
+							color: $white;
+
+							&:hover {
+								color: $blue;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			background: url(../../../images/backgrounds/artistcorner1.png) no-repeat left bottom;
+		}
+	}
+
+	&.list {
+		.mainbutt {
+			background: $yellow;
+
+			a {
+				color: $blue;
+			}
+
+			&:hover {
+				background: $lyellow;
+			}
+		}
+	}
+
+	.views-exposed-form {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: stretch;
+
+		input {
+			background: $white;
+			color: $blue;
+		}
+
+		.form-item-title {
+			width: auto;
+			flex-grow: 1;
+		}
+
+		.form-actions {
+			position: static;
+			display: flex;
+			justify-content: flex-end;
+			align-items: stretch;
+
+
+			input {
+				background: $blue;
+				color: $white;
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+
+			&:hover {
+				input {
+					background: $dblue;
+				}
+			}
+		}
+	}
+
+	.views-row.list {
+		.views-field-nothing .field-content .list-right .text .title a {
+			color: $white;
+		}
+
+		.views-field-nothing .field-content .list-right .text {
+			color: $white;
+		}
+
+		&:hover {
+			opacity: .6;
+		}
+	}
+
+	@media screen and (max-width: $mobile-max) {
+		.main-content {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+body.artist {
+	// Header with artist name, artwork, and intro
+	.main-content {
+		text-align: right;
+		padding: 90px 0 150px;
+
+		.container {
+			display: grid;
+			grid-template-columns: 40% 60%;
+			grid-gap: 30px;
+		}
+
+		.mobile, .desktop {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: flex-end;
+		}
+
+		h1 {
+			color: $yellow;
+			letter-spacing: -5px;
+			margin-bottom: 20px;
+
+			&,
+			span {
+				line-height: 1.0;
+			}
+		}
+
+		.mobile-image {
+			display: none;
+			margin: 20px auto;
+		}
+
+		h2 {
+			font-size: 30px;
+			font-weight: 400;
+			color: $white;
+			text-transform: none;
+		}
+
+		p {
+			color: $white;
+			font-weight: 500;
+
+			&:last-child {
+				margin-bottom: 0;
+
+				br {
+					display: none;
+				}
+			}
+		}
+
+		@media (max-width: $mobile-max) {
+			text-align: center;
+			padding-top: 60px;
+
+			.container {
+				display: block;
+				text-align: center;
+			}
+
+			&:after {
+				display: none;
+			}
+
+			.mobile {
+				display: block;
+			}
+
+			.mobile-image {
+				display: block;
+			}
+
+			.desktop {
+				display: none;
+			}
+
+			h1 {
+				letter-spacing: -3px;
+			}
+
+
+		}
+	}
+
+	.artist-profile {
+		background: $yellow url(../../../images/backgrounds/artistprofile.png) no-repeat left bottom;
+		background-size: 100% auto;
+		position: relative;
+
+		.container {
+			position: relative;
+			z-index: 1;
+			grid-template-columns: 40% 60%;
+			grid-gap: 30px;
+			padding: 0 10% 50px;
+
+			h2 {
+				font-size: 40px;
+				font-weight: bold;
+				padding: 50px 0 10px;
+				color: $dblue;
+
+				span {
+					font-size: 40px;
+				}
+			}
+
+			img {
+				width: 400px;
+			}
+
+			p {
+				color: $dblue;
+				margin: 0 0 10px;
+				font-size: 18px;
+
+				a {
+					color: $dblue;
+					font-size: 18px;
+				}
+
+				strong {
+					text-transform: uppercase;
+					font-size: 18px;
+				}
+			}
+
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			background: url(../../../images/backgrounds/artistcorner2.png) no-repeat right bottom;
+		}
+	}
+
+	.artist-desc {
+		background: #fff;
+		padding: 100px 0;
+
+		.grid {
+			grid-template-columns: 300px calc(100% - 400px);
+			grid-gap: 100px;
+
+			article {
+				grid-column-start: 2;
+				grid-column-end: 3;
+				grid-row-start: 1;
+				grid-row-end: 2;
+
+				ul,
+				ol {
+					margin-left: 20px;
+
+					* {
+						font-size: 18px;
+					}
+
+					li {
+						margin: 0 0 10px;
+						line-height: 1.7;
+
+
+					}
+				}
+
+				img {
+					margin: 40px 0;
+				}
+
+				h2,
+				h2 span {
+					font-size: 40px;
+					color: $dblue;
+					margin: 0 0 20px;
+				}
+
+				h3 {
+					font-size: 30px;
+					color: $dblue;
+					margin: 30px 0 20px;
+				}
+
+				p {
+					line-height: 1.7;
+					font-size: 18px;
+					margin: 0 0 20px;
+				}
+			}
+
+			aside {
+				padding: 0;
+
+				h2 {
+					color: $black;
+				}
+
+				ul {
+					li {
+						a {
+							color: $black;
+
+							&.is-active {
+								color: $blue;
+								border-color: $blue;
+							}
+
+							&:hover {
+								color: $yellow;
+
+								&.is-active {
+									border-color: $yellow;
+								}
+							}
+						}
+
+					}
+				}
+
+			}
+		}
+	}
+
+	.related {
+		background: $dblue;
+		position: relative;
+		padding: 0;
+
+		&:before {
+			background: #fff url(../../../images/elements/bluestairs.png) no-repeat right bottom;
+			background-size: auto 50%;
+			content: '';
+			display: block;
+			width: 30%;
+			height: 100%;
+			position: absolute;
+			left: 1;
+			top: 1;
+		}
+
+		.container {
+
+			.rc {
+				padding: 50px 0;
+
+				h2 {
+					color: $white;
+				}
+
+				.views-row {
+
+					.text {
+						position: absolute;
+						width: 100%;
+						background: $yellow;
+						padding: 25px;
+						bottom: 0;
+
+						span {
+							color: $blue;
+						}
+
+						p {
+							color: $blue;
+						}
+
+					}
+
+					&:hover {
+						.text {
+							background: $blue;
+
+							span,
+							p {
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: $mobile-max) {
+		.artist-profile {
+			background-position: center bottom;
+			background-size: auto;
+
+			.container {
+				display: block;
+				text-align: center;
+
+				img {
+					margin: 50px 0 0;
+				}
+			}
+
+			&:after {
+				display: none;
+			}
+		}
+
+		.artist-desc {
+			.grid {
+				display: block;
+
+				aside {
+					margin: 50px 0 0;
+				}
+			}
+		}
+	}
+}

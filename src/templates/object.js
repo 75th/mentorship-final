@@ -5,6 +5,7 @@ import ObjectTableRow from "../components/objectTableRow"
 
 export default ({ data }) => {
   const node = data.nodeObject
+  console.log(node);
   return (
     <Container>
       <div className="main-content">
@@ -19,7 +20,7 @@ export default ({ data }) => {
 
             <div className="images">
               <div class="cycle-slideshow">
-
+                { node.relationships.field_images && <img src={ node.relationships.field_images[0].localFile.publicURL } /> }
               </div>
             </div>
           </div>
@@ -95,8 +96,8 @@ export const query = graphql`
       }
       relationships {
         field_images {
-          uri {
-            url
+          localFile {
+            publicURL
           }
         }
         field_object_category {

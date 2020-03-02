@@ -8,8 +8,8 @@ const IndexPage = ({ data }) => {
       <h1>All {data.allNodeObject.totalCount} Objects</h1>
 
       <ul>
-        {data.allNodeObject.edges.map(({ node }) => (
-          <li><Link to={node.fields.slug}>{node.title}</Link></li>
+        {data.allNodeObject.edges.map(({ node }, i) => (
+          <li key={`tableRow${i}}`}><Link to={node.fields.slug}>{node.title}</Link></li>
         ))}
       </ul>
     </Container>
